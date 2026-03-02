@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Nunito:wght@400;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Alfa Slab One", serif;
+  --font-body: "Nunito", sans-serif;
+
+  --color-brand-orange:    #FF6B1A;
+  --color-brand-yellow:    #FFD93D;
+  --color-brand-red:       #E63946;
+  --color-brand-cream:     #FFF8F0;
+  --color-brand-brown:     #5C3317;
+  --color-brand-darkbrown: #3A1F0B;
+
+  --animate-float:       float 3s ease-in-out infinite;
+  --animate-float-slow:  float 5s ease-in-out infinite;
+  --animate-pulse-glow:  pulseGlow 2s ease-in-out infinite;
+  --animate-spin-slow:   spin 12s linear infinite;
+  --animate-bounce-sm:   bounceSm 1.8s ease-in-out infinite;
+  --animate-shimmer:     shimmer 2.5s linear infinite;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-14px); }
+  }
+  @keyframes pulseGlow {
+    0%, 100% { box-shadow: 0 0 20px 4px rgba(255,107,26,0.5); }
+    50%       { box-shadow: 0 0 40px 10px rgba(255,217,61,0.7); }
+  }
+  @keyframes bounceSm {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(-6px); }
+  }
+  @keyframes shimmer {
+    0%   { background-position: -400px 0; }
+    100% { background-position:  400px 0; }
+  }
+}
+
+/* ── Gradient text utilities ── */
+.text-gradient-fire {
+  background: linear-gradient(135deg, #FFD93D 0%, #FF6B1A 50%, #E63946 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #fff7a1 0%, #FFD93D 50%, #ff9f00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Paw-print background ── */
+.paw-bg {
+  background-color: #3A1F0B;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cg fill='%23FF6B1A' fill-opacity='0.08'%3E%3Ccircle cx='10' cy='8' r='4'/%3E%3Ccircle cx='22' cy='5' r='3'/%3E%3Ccircle cx='32' cy='8' r='3'/%3E%3Ccircle cx='40' cy='5' r='2.5'/%3E%3Cellipse cx='25' cy='20' rx='10' ry='12'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* ── Star-speckle overlay ── */
+.bg-stars {
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px),
+    radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px);
+  background-size: 60px 60px, 30px 30px;
+  background-position: 0 0, 15px 15px;
+}
+
+/* ── Shimmer CTA button ── */
+.btn-shimmer {
+  background: linear-gradient(
+    90deg,
+    #FF6B1A 0%,
+    #FFD93D 40%,
+    #FF6B1A 60%,
+    #E63946 100%
+  );
+  background-size: 400% 100%;
+  animation: shimmer 2.5s linear infinite;
+}
+
+html {
+  scroll-behavior: smooth;
+}
