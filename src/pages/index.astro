@@ -6,7 +6,7 @@ const year = new Date().getFullYear();
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/debbie-s-dog-food-campaign-website/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content="Debbie's Dog Food — premium nutrition your pup will go wild for. Coming soon!" />
@@ -75,7 +75,7 @@ const year = new Date().getFullYear();
         <span class="h-2.5 w-2.5 rounded-full bg-brand-yellow animate-bounce-sm inline-block" style="animation-delay:0.4s;"></span>
       </div>
 
-      <!-- ── Brand Logo ── -->
+      <!-- ── Brand Logo / Hero Heading ── -->
       <div class="animate-float mb-4 text-center">
         <!-- Dog-bowl icon -->
         <div class="mx-auto mb-5 flex items-center justify-center w-28 h-28 rounded-full bg-gradient-to-br from-brand-orange to-brand-red shadow-2xl border-4 border-brand-yellow/50 ring-4 ring-brand-orange/20">
@@ -119,9 +119,9 @@ const year = new Date().getFullYear();
         when we launch — drop your details below!
       </p>
 
-      <!-- ────────────────────────────────────────
+      <!-- ─────────────────────────────────────────
            SIGN-UP FORM CARD
-      ──────────────────────────────────────── -->
+      ───────────────────────────────────────── -->
       <div id="signup" class="w-full max-w-md">
         <div class="relative rounded-3xl border border-brand-orange/30 bg-white/5 backdrop-blur-md shadow-2xl p-8 sm:p-10 overflow-hidden">
           <!-- Inner rim glow -->
@@ -396,12 +396,12 @@ const year = new Date().getFullYear();
          ║  FORM VALIDATION SCRIPT                     ║
          ╚══════════════════════════════════════════════╝ -->
     <script>
-      const form          = document.getElementById('signup-form')   as HTMLFormElement  | null;
-      const successMsg    = document.getElementById('success-msg');
-      const firstNameInput = document.getElementById('firstName')    as HTMLInputElement | null;
-      const emailInput    = document.getElementById('email')         as HTMLInputElement | null;
+      const form           = document.getElementById('signup-form')    as HTMLFormElement  | null;
+      const successMsg     = document.getElementById('success-msg');
+      const firstNameInput = document.getElementById('firstName')      as HTMLInputElement | null;
+      const emailInput     = document.getElementById('email')          as HTMLInputElement | null;
       const firstNameError = document.getElementById('firstName-error');
-      const emailError    = document.getElementById('email-error');
+      const emailError     = document.getElementById('email-error');
 
       function isValidEmail(v: string): boolean {
         return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());
@@ -422,7 +422,7 @@ const year = new Date().getFullYear();
       form?.addEventListener('submit', (e) => {
         e.preventDefault();
         const nameVal  = firstNameInput?.value ?? '';
-        const emailVal = emailInput?.value    ?? '';
+        const emailVal = emailInput?.value     ?? '';
         let valid = true;
 
         if (nameVal.trim() === '') {
