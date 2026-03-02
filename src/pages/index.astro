@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+const year = new Date().getFullYear();
 ---
 
 <html lang="en">
@@ -12,121 +13,148 @@ import '../styles/global.css';
     <title>Debbie's Dog Food — Coming Soon 🐾</title>
   </head>
 
-  <body class="font-body bg-brand-darkbrown overflow-x-hidden">
+  <body class="bg-brand-darkbrown overflow-x-hidden font-body">
 
-    <!-- ═══════════════════════════════════════════
-         HERO / COMING SOON SECTION
-    ════════════════════════════════════════════ -->
-    <section class="paw-bg bg-stars relative min-h-screen flex flex-col items-center justify-center px-4 py-16 overflow-hidden">
+    <!-- ╔══════════════════════════════════════════════╗
+         ║  ANNOUNCEMENT BAR                           ║
+         ╚══════════════════════════════════════════════╝ -->
+    <div class="relative overflow-hidden bg-gradient-to-r from-brand-red via-brand-orange to-brand-yellow py-2.5 text-center">
+      <div class="marquee-track gap-16 items-center whitespace-nowrap text-brand-darkbrown font-extrabold text-sm tracking-wide uppercase">
+        {[...Array(8)].map(() => (
+          <span class="inline-flex items-center gap-4 pr-16">
+            <span>🐾</span><span>Coming Soon</span>
+            <span>🦴</span><span>Premium Dog Food</span>
+            <span>⭐</span><span>Launching Soon</span>
+            <span>🐶</span><span>Join the Waitlist</span>
+          </span>
+        ))}
+      </div>
+    </div>
 
-      <!-- Decorative blobs -->
-      <div class="pointer-events-none absolute -top-20 -left-20 w-72 h-72 rounded-full bg-brand-orange opacity-20 blur-3xl"></div>
-      <div class="pointer-events-none absolute -bottom-20 -right-20 w-96 h-96 rounded-full bg-brand-yellow opacity-15 blur-3xl"></div>
-      <div class="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-brand-red opacity-5 blur-3xl"></div>
 
-      <!-- Spinning starburst ring (decorative) -->
-      <div class="pointer-events-none absolute top-10 right-10 w-24 h-24 opacity-30 animate-spin-slow">
+    <!-- ╔══════════════════════════════════════════════╗
+         ║  HERO / COMING SOON SECTION                 ║
+         ╚══════════════════════════════════════════════╝ -->
+    <section class="paw-bg bg-stars relative min-h-screen flex flex-col items-center justify-center px-4 py-20 overflow-hidden">
+
+      <!-- Ambient glow blobs -->
+      <div class="pointer-events-none absolute -top-32 -left-32 w-96 h-96 rounded-full bg-brand-orange opacity-20 blur-3xl"></div>
+      <div class="pointer-events-none absolute -bottom-32 -right-32 w-[28rem] h-[28rem] rounded-full bg-brand-yellow opacity-15 blur-3xl"></div>
+      <div class="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-brand-red opacity-5 blur-3xl"></div>
+
+      <!-- Spinning starbursts -->
+      <div class="pointer-events-none absolute top-10 right-10 w-28 h-28 opacity-30 animate-spin-slow">
         <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
           <polygon points="50,2 61,35 95,35 68,57 79,91 50,70 21,91 32,57 5,35 39,35" fill="#FFD93D"/>
         </svg>
       </div>
-      <div class="pointer-events-none absolute bottom-16 left-10 w-16 h-16 opacity-20 animate-spin-slow" style="animation-direction: reverse;">
+      <div class="pointer-events-none absolute bottom-20 left-10 w-20 h-20 opacity-25 animate-spin-slow" style="animation-direction:reverse;animation-duration:9s;">
         <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
           <polygon points="50,2 61,35 95,35 68,57 79,91 50,70 21,91 32,57 5,35 39,35" fill="#FF6B1A"/>
         </svg>
       </div>
-
-      <!-- Floating paw emoji accents -->
-      <span class="pointer-events-none absolute top-20 left-[8%] text-3xl animate-float opacity-40 select-none">🐾</span>
-      <span class="pointer-events-none absolute top-36 right-[12%] text-2xl animate-float-slow opacity-30 select-none" style="animation-delay:1s;">🐶</span>
-      <span class="pointer-events-none absolute bottom-28 left-[15%] text-xl animate-float opacity-25 select-none" style="animation-delay:0.5s;">🦴</span>
-      <span class="pointer-events-none absolute bottom-20 right-[8%] text-2xl animate-float-slow opacity-35 select-none" style="animation-delay:1.5s;">⭐</span>
-
-      <!-- COMING SOON badge -->
-      <div class="animate-pulse-glow mb-6 inline-flex items-center gap-2 rounded-full border-2 border-brand-yellow bg-brand-yellow/10 px-5 py-2 backdrop-blur-sm">
-        <span class="h-2.5 w-2.5 rounded-full bg-brand-yellow animate-bounce-sm inline-block"></span>
-        <span class="font-body font-800 text-brand-yellow tracking-[0.2em] text-xs uppercase font-extrabold">
-          Coming Soon
-        </span>
-        <span class="h-2.5 w-2.5 rounded-full bg-brand-yellow animate-bounce-sm inline-block" style="animation-delay: 0.3s;"></span>
+      <div class="pointer-events-none absolute top-1/3 left-6 w-14 h-14 opacity-20 animate-spin-slow" style="animation-duration:15s;">
+        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="50,2 61,35 95,35 68,57 79,91 50,70 21,91 32,57 5,35 39,35" fill="#E63946"/>
+        </svg>
       </div>
 
-      <!-- Logo / Brand wordmark -->
+      <!-- Floating emoji accents -->
+      <span class="pointer-events-none select-none absolute top-24 left-[7%]  text-4xl animate-float  opacity-40" style="animation-delay:0s;">🐾</span>
+      <span class="pointer-events-none select-none absolute top-40 right-[10%] text-3xl animate-float-slow opacity-30" style="animation-delay:1s;">🐶</span>
+      <span class="pointer-events-none select-none absolute bottom-32 left-[14%] text-2xl animate-float  opacity-25" style="animation-delay:0.5s;">🦴</span>
+      <span class="pointer-events-none select-none absolute bottom-24 right-[7%]  text-3xl animate-float-slow opacity-35" style="animation-delay:1.8s;">⭐</span>
+      <span class="pointer-events-none select-none absolute top-[55%] right-[4%]  text-xl animate-float  opacity-20" style="animation-delay:2.2s;">🐾</span>
+
+      <!-- ── COMING SOON badge ── -->
+      <div class="animate-pulse-glow mb-7 inline-flex items-center gap-2 rounded-full border-2 border-brand-yellow bg-brand-yellow/10 px-6 py-2.5 backdrop-blur-sm shadow-xl">
+        <span class="h-2.5 w-2.5 rounded-full bg-brand-yellow animate-bounce-sm inline-block"></span>
+        <span class="font-body font-extrabold text-brand-yellow tracking-[0.25em] text-xs uppercase">
+          Coming Soon
+        </span>
+        <span class="h-2.5 w-2.5 rounded-full bg-brand-yellow animate-bounce-sm inline-block" style="animation-delay:0.4s;"></span>
+      </div>
+
+      <!-- ── Brand Logo ── -->
       <div class="animate-float mb-4 text-center">
-        <!-- Dog bowl icon -->
-        <div class="mx-auto mb-4 flex items-center justify-center w-24 h-24 rounded-full bg-gradient-to-br from-brand-orange to-brand-red shadow-2xl border-4 border-brand-yellow/60">
-          <svg class="w-14 h-14" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Bowl -->
-            <ellipse cx="32" cy="44" rx="22" ry="8" fill="#fff8f0" opacity="0.95"/>
-            <path d="M10 40 Q10 56 32 56 Q54 56 54 40 Z" fill="#fff8f0" opacity="0.9"/>
-            <!-- Food pieces -->
-            <circle cx="26" cy="42" r="3" fill="#FF6B1A"/>
-            <circle cx="33" cy="41" r="2.5" fill="#E63946"/>
-            <circle cx="39" cy="43" r="2" fill="#FF6B1A"/>
-            <!-- Steam -->
-            <path d="M24 34 Q26 30 24 26" stroke="#FFD93D" stroke-width="2" stroke-linecap="round" fill="none"/>
-            <path d="M32 32 Q34 28 32 24" stroke="#FFD93D" stroke-width="2" stroke-linecap="round" fill="none"/>
-            <path d="M40 34 Q42 30 40 26" stroke="#FFD93D" stroke-width="2" stroke-linecap="round" fill="none"/>
-            <!-- Paw on bowl -->
-            <circle cx="32" cy="38" r="1.2" fill="#5C3317" opacity="0.4"/>
-            <circle cx="29" cy="36.5" r="0.9" fill="#5C3317" opacity="0.4"/>
-            <circle cx="35" cy="36.5" r="0.9" fill="#5C3317" opacity="0.4"/>
-            <circle cx="31" cy="35.2" r="0.8" fill="#5C3317" opacity="0.4"/>
+        <!-- Dog-bowl icon -->
+        <div class="mx-auto mb-5 flex items-center justify-center w-28 h-28 rounded-full bg-gradient-to-br from-brand-orange to-brand-red shadow-2xl border-4 border-brand-yellow/50 ring-4 ring-brand-orange/20">
+          <svg class="w-16 h-16" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Steam lines -->
+            <path d="M22 32 Q24 27 22 22" stroke="#FFD93D" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+            <path d="M32 30 Q34 25 32 20" stroke="#FFD93D" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+            <path d="M42 32 Q44 27 42 22" stroke="#FFD93D" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+            <!-- Bowl body -->
+            <path d="M10 40 Q10 58 32 58 Q54 58 54 40 Z" fill="#fff8f0" opacity="0.92"/>
+            <ellipse cx="32" cy="40" rx="22" ry="8" fill="#fff8f0" opacity="0.95"/>
+            <!-- Food kibble -->
+            <circle cx="26" cy="42" r="3.2" fill="#FF6B1A"/>
+            <circle cx="33" cy="40.5" r="2.7" fill="#E63946"/>
+            <circle cx="39.5" cy="43" r="2.2" fill="#FF6B1A"/>
+            <circle cx="29.5" cy="45" r="1.8" fill="#E63946" opacity="0.7"/>
+            <!-- Paw print on rim -->
+            <circle cx="32" cy="38" r="1.3" fill="#5C3317" opacity="0.35"/>
+            <circle cx="29" cy="36.2" r="1"   fill="#5C3317" opacity="0.35"/>
+            <circle cx="35" cy="36.2" r="1"   fill="#5C3317" opacity="0.35"/>
+            <circle cx="31" cy="34.8" r="0.9" fill="#5C3317" opacity="0.35"/>
           </svg>
         </div>
 
         <h1 class="font-display text-gradient-fire text-6xl sm:text-7xl md:text-8xl leading-none drop-shadow-2xl">
           Debbie's
         </h1>
-        <div class="flex items-center justify-center gap-3 mt-1">
-          <div class="h-px flex-1 max-w-[80px] bg-gradient-to-r from-transparent to-brand-yellow/60"></div>
-          <span class="font-display text-gradient-gold text-3xl sm:text-4xl md:text-5xl tracking-widest">
-            Dog Food
-          </span>
-          <div class="h-px flex-1 max-w-[80px] bg-gradient-to-l from-transparent to-brand-yellow/60"></div>
+        <div class="flex items-center justify-center gap-4 mt-2">
+          <div class="h-px flex-1 max-w-[90px] bg-gradient-to-r from-transparent to-brand-yellow/60"></div>
+          <span class="font-display text-gradient-gold text-3xl sm:text-4xl md:text-5xl tracking-widest">Dog Food</span>
+          <div class="h-px flex-1 max-w-[90px] bg-gradient-to-l from-transparent to-brand-yellow/60"></div>
         </div>
       </div>
 
       <!-- Tagline -->
-      <p class="mt-4 mb-3 text-brand-cream/90 font-body font-semibold text-lg sm:text-xl md:text-2xl text-center max-w-xl leading-snug">
+      <p class="mt-5 mb-3 font-body font-semibold text-brand-cream/90 text-lg sm:text-xl md:text-2xl text-center max-w-xl leading-snug">
         Premium nutrition your pup will go <span class="text-brand-yellow font-extrabold">absolutely wild</span> for. 🐾
       </p>
-      <p class="mb-10 text-brand-cream/60 font-body text-sm sm:text-base text-center max-w-md">
-        We're whipping up something amazing in the kitchen. Be the first to know when we launch — drop your details below!
+      <p class="mb-12 text-brand-cream/55 font-body text-sm sm:text-base text-center max-w-md leading-relaxed">
+        We're whipping up something amazing in the kitchen. Be the first to know
+        when we launch — drop your details below!
       </p>
 
-      <!-- ══════════════════════════════
+      <!-- ────────────────────────────────────────
            SIGN-UP FORM CARD
-      ═══════════════════════════════ -->
+      ──────────────────────────────────────── -->
       <div id="signup" class="w-full max-w-md">
         <div class="relative rounded-3xl border border-brand-orange/30 bg-white/5 backdrop-blur-md shadow-2xl p-8 sm:p-10 overflow-hidden">
-          <!-- Card inner glow -->
+          <!-- Inner rim glow -->
           <div class="pointer-events-none absolute inset-0 rounded-3xl ring-1 ring-inset ring-white/10"></div>
-          <div class="pointer-events-none absolute -top-10 -right-10 w-40 h-40 rounded-full bg-brand-orange/20 blur-2xl"></div>
+          <!-- Card corner glow -->
+          <div class="pointer-events-none absolute -top-12 -right-12 w-48 h-48 rounded-full bg-brand-orange/20 blur-2xl"></div>
+          <div class="pointer-events-none absolute -bottom-10 -left-10 w-36 h-36 rounded-full bg-brand-yellow/10 blur-2xl"></div>
 
           <h2 class="font-display text-2xl sm:text-3xl text-brand-yellow text-center mb-1">
             Get Early Access
           </h2>
-          <p class="text-brand-cream/60 text-sm text-center mb-7">
-            Join the pack — be the first to hear about our launch!
+          <p class="text-brand-cream/55 text-sm text-center mb-8">
+            Join the pack — be first to hear when we launch! 🐶
           </p>
 
-          <!-- Success message (hidden by default) -->
-          <div id="success-msg" class="hidden flex-col items-center justify-center py-6 text-center gap-3">
-            <div class="text-5xl animate-bounce-sm">🎉</div>
+          <!-- Success state (hidden by default) -->
+          <div id="success-msg" class="hidden flex-col items-center justify-center py-8 text-center gap-4">
+            <div class="text-6xl animate-bounce-sm">🎉</div>
             <p class="font-display text-brand-yellow text-2xl">You're on the list!</p>
-            <p class="text-brand-cream/70 text-sm">We'll bark at you the moment we launch.</p>
+            <p class="text-brand-cream/70 text-sm leading-relaxed max-w-xs">
+              We'll bark at you the moment we launch. Get ready for something delicious!
+            </p>
           </div>
 
           <form id="signup-form" novalidate class="flex flex-col gap-5">
 
-            <!-- First Name -->
+            <!-- First Name field -->
             <div class="flex flex-col gap-1.5">
-              <label for="firstName" class="text-brand-cream/80 font-body font-bold text-sm tracking-wide uppercase">
+              <label for="firstName" class="text-brand-cream/80 font-body font-bold text-xs tracking-widest uppercase">
                 First Name
               </label>
               <div class="relative">
-                <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-brand-orange/70 text-lg select-none pointer-events-none">🐶</span>
+                <span class="pointer-events-none select-none absolute left-3.5 top-1/2 -translate-y-1/2 text-lg text-brand-orange/70">🐶</span>
                 <input
                   type="text"
                   id="firstName"
@@ -134,19 +162,21 @@ import '../styles/global.css';
                   placeholder="e.g. Debbie"
                   autocomplete="given-name"
                   required
-                  class="w-full rounded-xl bg-white/10 border border-white/15 text-brand-cream placeholder-brand-cream/30 font-body text-base px-4 pl-10 py-3.5 outline-none transition-all duration-200 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/40 hover:border-white/30"
+                  class="w-full rounded-xl bg-white/10 border border-white/15 text-brand-cream placeholder-brand-cream/30 font-body text-base pl-10 pr-4 py-3.5 outline-none transition-all duration-200 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/40 hover:border-white/30"
                 />
               </div>
-              <p id="firstName-error" class="hidden text-brand-red text-xs font-semibold ml-1">Please enter your first name.</p>
+              <p id="firstName-error" class="hidden text-brand-red text-xs font-bold ml-1">
+                Please enter your first name.
+              </p>
             </div>
 
-            <!-- Email -->
+            <!-- Email field -->
             <div class="flex flex-col gap-1.5">
-              <label for="email" class="text-brand-cream/80 font-body font-bold text-sm tracking-wide uppercase">
+              <label for="email" class="text-brand-cream/80 font-body font-bold text-xs tracking-widest uppercase">
                 Email Address
               </label>
               <div class="relative">
-                <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-brand-orange/70 text-lg select-none pointer-events-none">📧</span>
+                <span class="pointer-events-none select-none absolute left-3.5 top-1/2 -translate-y-1/2 text-lg text-brand-orange/70">📧</span>
                 <input
                   type="email"
                   id="email"
@@ -154,30 +184,45 @@ import '../styles/global.css';
                   placeholder="you@example.com"
                   autocomplete="email"
                   required
-                  class="w-full rounded-xl bg-white/10 border border-white/15 text-brand-cream placeholder-brand-cream/30 font-body text-base px-4 pl-10 py-3.5 outline-none transition-all duration-200 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/40 hover:border-white/30"
+                  class="w-full rounded-xl bg-white/10 border border-white/15 text-brand-cream placeholder-brand-cream/30 font-body text-base pl-10 pr-4 py-3.5 outline-none transition-all duration-200 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/40 hover:border-white/30"
                 />
               </div>
-              <p id="email-error" class="hidden text-brand-red text-xs font-semibold ml-1">Please enter a valid email address.</p>
+              <p id="email-error" class="hidden text-brand-red text-xs font-bold ml-1">
+                Please enter a valid email address.
+              </p>
             </div>
 
-            <!-- Submit -->
+            <!-- Submit button -->
             <button
               type="submit"
-              class="btn-shimmer mt-1 w-full rounded-xl py-4 font-display text-white text-xl tracking-wide shadow-lg hover:scale-[1.03] active:scale-[0.98] transition-transform duration-150 focus:outline-none focus:ring-4 focus:ring-brand-yellow/50 cursor-pointer"
+              class="btn-shimmer mt-2 w-full rounded-xl py-4 font-display text-white text-xl tracking-wide shadow-xl hover:scale-[1.03] active:scale-[0.97] transition-transform duration-150 focus:outline-none focus:ring-4 focus:ring-brand-yellow/50 cursor-pointer"
             >
               Count Me In! 🐾
             </button>
 
-            <p class="text-brand-cream/35 text-xs text-center">
-              No spam, ever. Unsubscribe any time. We're dog people — we keep it real. 🐕
+            <p class="text-brand-cream/35 text-xs text-center leading-relaxed">
+              No spam, ever. Unsubscribe any time.<br/>We're dog people — we keep it real. 🐕
             </p>
           </form>
+        </div>
+
+        <!-- Trust badges -->
+        <div class="mt-5 flex flex-wrap items-center justify-center gap-4">
+          <span class="inline-flex items-center gap-1.5 rounded-full bg-white/5 border border-white/10 px-3.5 py-1.5 text-brand-cream/60 text-xs font-semibold">
+            🔒 100% Private
+          </span>
+          <span class="inline-flex items-center gap-1.5 rounded-full bg-white/5 border border-white/10 px-3.5 py-1.5 text-brand-cream/60 text-xs font-semibold">
+            🎁 Early-Bird Perks
+          </span>
+          <span class="inline-flex items-center gap-1.5 rounded-full bg-white/5 border border-white/10 px-3.5 py-1.5 text-brand-cream/60 text-xs font-semibold">
+            🐾 8,400+ on Waitlist
+          </span>
         </div>
       </div>
 
       <!-- Scroll hint -->
       <div class="mt-14 flex flex-col items-center gap-2 animate-bounce-sm text-brand-cream/40">
-        <span class="text-xs uppercase tracking-widest font-semibold">Scroll for more</span>
+        <span class="text-xs uppercase tracking-widest font-semibold">Discover More</span>
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
         </svg>
@@ -185,157 +230,143 @@ import '../styles/global.css';
     </section>
 
 
-    <!-- ═══════════════════════════════════════════
-         WHY DEBBIE'S — FEATURES STRIP
-    ════════════════════════════════════════════ -->
-    <section class="relative bg-brand-brown py-20 px-4 overflow-hidden">
-      <div class="pointer-events-none absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2240%22%20height%3D%2240%22%3E%3Ccircle%20cx%3D%2220%22%20cy%3D%2220%22%20r%3D%221%22%20fill%3D%22%23FF6B1A%22%20fill-opacity%3D%220.12%22/%3E%3C/svg%3E')] opacity-60"></div>
+    <!-- ╔══════════════════════════════════════════════╗
+         ║  FEATURE CARDS                              ║
+         ╚══════════════════════════════════════════════╝ -->
+    <section class="relative bg-brand-brown py-24 px-4 overflow-hidden">
+      <!-- Subtle dot grid -->
+      <div class="pointer-events-none absolute inset-0 opacity-50"
+           style="background-image:radial-gradient(circle, rgba(255,107,26,0.12) 1px, transparent 1px); background-size:36px 36px;"></div>
 
       <div class="relative max-w-5xl mx-auto">
-        <h2 class="font-display text-center text-3xl sm:text-4xl md:text-5xl text-gradient-fire mb-3">
-          Why Dogs Can't Resist Us
-        </h2>
-        <p class="text-center text-brand-cream/60 mb-14 max-w-xl mx-auto">
-          Every bag of Debbie's is packed with tail-wagging goodness — here's what makes us different.
-        </p>
+        <div class="text-center mb-14">
+          <span class="inline-flex items-center gap-2 rounded-full border border-brand-yellow/30 bg-brand-yellow/5 px-4 py-1.5 text-brand-yellow/80 text-xs font-extrabold uppercase tracking-widest mb-5">
+            🌟 Why Debbie's?
+          </span>
+          <h2 class="font-display text-3xl sm:text-4xl md:text-5xl text-gradient-fire mb-3">
+            Why Dogs Can't Resist Us
+          </h2>
+          <p class="text-brand-cream/55 max-w-xl mx-auto text-sm sm:text-base leading-relaxed">
+            Every bag is packed with tail-wagging goodness — here's what makes us different.
+          </p>
+        </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <!-- Feature 1 -->
-          <div class="group flex flex-col items-center text-center bg-white/5 hover:bg-white/10 border border-white/10 hover:border-brand-orange/40 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl cursor-default">
-            <div class="text-5xl mb-4 group-hover:animate-bounce-sm">🥩</div>
-            <h3 class="font-display text-brand-yellow text-xl mb-2">Real Meat First</h3>
-            <p class="text-brand-cream/60 text-sm leading-relaxed">
-              Cage-free chicken, wild salmon & grass-fed beef. No fillers, no nonsense.
-            </p>
-          </div>
-
-          <!-- Feature 2 -->
-          <div class="group flex flex-col items-center text-center bg-white/5 hover:bg-white/10 border border-white/10 hover:border-brand-orange/40 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl cursor-default">
-            <div class="text-5xl mb-4 group-hover:animate-bounce-sm">🌿</div>
-            <h3 class="font-display text-brand-yellow text-xl mb-2">All-Natural Ingredients</h3>
-            <p class="text-brand-cream/60 text-sm leading-relaxed">
-              Zero artificial colours, flavours or preservatives. Just wholesome goodness.
-            </p>
-          </div>
-
-          <!-- Feature 3 -->
-          <div class="group flex flex-col items-center text-center bg-white/5 hover:bg-white/10 border border-white/10 hover:border-brand-orange/40 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl cursor-default">
-            <div class="text-5xl mb-4 group-hover:animate-bounce-sm">🔬</div>
-            <h3 class="font-display text-brand-yellow text-xl mb-2">Vet-Formulated</h3>
-            <p class="text-brand-cream/60 text-sm leading-relaxed">
-              Developed alongside veterinary nutritionists for optimal canine health.
-            </p>
-          </div>
-
-          <!-- Feature 4 -->
-          <div class="group flex flex-col items-center text-center bg-white/5 hover:bg-white/10 border border-white/10 hover:border-brand-orange/40 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl cursor-default">
-            <div class="text-5xl mb-4 group-hover:animate-bounce-sm">📦</div>
-            <h3 class="font-display text-brand-yellow text-xl mb-2">Delivered to You</h3>
-            <p class="text-brand-cream/60 text-sm leading-relaxed">
-              Flexible subscriptions with free delivery, straight to your door every month.
-            </p>
-          </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {[
+            { icon: "🥩", title: "Real Meat First",         body: "Cage-free chicken, wild salmon & grass-fed beef. No fillers, no nonsense — ever." },
+            { icon: "🌿", title: "All-Natural Ingredients",  body: "Zero artificial colours, flavours or preservatives. Just wholesome, clean goodness." },
+            { icon: "🔬", title: "Vet-Formulated",           body: "Developed alongside veterinary nutritionists for optimal lifelong canine health." },
+            { icon: "📦", title: "Delivered to You",         body: "Flexible subscriptions with free delivery, fresh to your door every single month." },
+          ].map(card => (
+            <div class="group flex flex-col items-center text-center bg-white/5 hover:bg-white/10 border border-white/10 hover:border-brand-orange/50 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl cursor-default">
+              <div class="text-5xl mb-4 group-hover:animate-bounce-sm select-none">{card.icon}</div>
+              <h3 class="font-display text-brand-yellow text-lg mb-2">{card.title}</h3>
+              <p class="text-brand-cream/55 text-sm leading-relaxed">{card.body}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
 
 
-    <!-- ═══════════════════════════════════════════
-         SOCIAL PROOF / HYPE NUMBERS
-    ════════════════════════════════════════════ -->
-    <section class="paw-bg py-20 px-4">
+    <!-- ╔══════════════════════════════════════════════╗
+         ║  SOCIAL PROOF / NUMBERS                     ║
+         ╚══════════════════════════════════════════════╝ -->
+    <section class="paw-bg py-24 px-4">
       <div class="max-w-4xl mx-auto text-center">
-        <div class="inline-flex items-center gap-2 rounded-full border border-brand-yellow/30 px-4 py-1.5 mb-8 text-brand-yellow/80 text-xs font-extrabold uppercase tracking-widest">
-          <span>🔥</span> The Buzz Is Real
-        </div>
+        <span class="inline-flex items-center gap-2 rounded-full border border-brand-yellow/30 bg-brand-yellow/5 px-4 py-1.5 text-brand-yellow/80 text-xs font-extrabold uppercase tracking-widest mb-6">
+          🔥 The Buzz Is Real
+        </span>
         <h2 class="font-display text-3xl sm:text-4xl md:text-5xl text-brand-cream mb-16">
           Dogs Already Love Us
         </h2>
 
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-16">
-          <div class="flex flex-col items-center gap-1">
-            <span class="font-display text-5xl sm:text-6xl text-gradient-fire">8,400+</span>
-            <span class="text-brand-cream/60 font-semibold text-sm uppercase tracking-wide">Dogs on the Waitlist</span>
-          </div>
-          <div class="flex flex-col items-center gap-1">
-            <span class="font-display text-5xl sm:text-6xl text-gradient-gold">100%</span>
-            <span class="text-brand-cream/60 font-semibold text-sm uppercase tracking-wide">Natural Ingredients</span>
-          </div>
-          <div class="flex flex-col items-center gap-1">
-            <span class="font-display text-5xl sm:text-6xl text-gradient-fire">5 ⭐</span>
-            <span class="text-brand-cream/60 font-semibold text-sm uppercase tracking-wide">Beta Taster Rating</span>
-          </div>
+        <!-- Stats row -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-20">
+          {[
+            { stat: "8,400+", label: "Dogs on the Waitlist", grad: "text-gradient-fire" },
+            { stat: "100%",   label: "Natural Ingredients",  grad: "text-gradient-gold" },
+            { stat: "5 ⭐",   label: "Beta Taster Rating",   grad: "text-gradient-fire" },
+          ].map(s => (
+            <div class="flex flex-col items-center gap-1">
+              <span class={`font-display text-5xl sm:text-6xl ${s.grad}`}>{s.stat}</span>
+              <span class="text-brand-cream/55 font-semibold text-xs uppercase tracking-widest">{s.label}</span>
+            </div>
+          ))}
         </div>
 
-        <!-- Testimonials -->
+        <!-- Testimonial cards -->
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
-          <!-- T1 -->
-          <div class="relative bg-white/5 border border-white/10 rounded-2xl p-6 text-left hover:border-brand-yellow/30 transition-colors duration-300">
-            <div class="text-brand-yellow text-lg mb-3">★★★★★</div>
-            <p class="text-brand-cream/80 text-sm leading-relaxed mb-4 italic">
-              "Biscuit used to be a picky eater. Now she practically knocks the bowl over she's so excited. Unreal."
-            </p>
-            <div class="flex items-center gap-3">
-              <div class="w-9 h-9 rounded-full bg-gradient-to-br from-brand-orange to-brand-red flex items-center justify-center font-display text-white text-sm">S</div>
-              <div>
-                <p class="text-brand-cream font-bold text-sm">Sarah M.</p>
-                <p class="text-brand-cream/40 text-xs">Golden Retriever Mum 🐕</p>
+          {[
+            {
+              quote: "Biscuit used to be a picky eater. Now she practically knocks the bowl over she's so excited. Unreal.",
+              name: "Sarah M.",
+              role: "Golden Retriever Mum 🐕",
+              initials: "S",
+              grad: "from-brand-orange to-brand-red",
+              textCol: "text-white",
+            },
+            {
+              quote: "My vet actually asked what I'd changed. Coat is glossier, energy through the roof. Debbie's is it.",
+              name: "James T.",
+              role: "Beagle Dad 🐶",
+              initials: "J",
+              grad: "from-brand-yellow to-brand-orange",
+              textCol: "text-brand-darkbrown",
+            },
+            {
+              quote: "Three dogs. Three breeds. All three obsessed. I've never seen anything like it. Launch already!",
+              name: "Priya K.",
+              role: "Multi-dog Household 🐾🐾🐾",
+              initials: "P",
+              grad: "from-brand-red to-brand-orange",
+              textCol: "text-white",
+            },
+          ].map(t => (
+            <div class="relative bg-white/5 border border-white/10 rounded-2xl p-6 text-left hover:border-brand-yellow/30 transition-colors duration-300">
+              <div class="text-brand-yellow text-base mb-3 tracking-tight">★★★★★</div>
+              <p class="text-brand-cream/80 text-sm leading-relaxed mb-5 italic">"{t.quote}"</p>
+              <div class="flex items-center gap-3">
+                <div class={`w-9 h-9 rounded-full bg-gradient-to-br ${t.grad} flex items-center justify-center font-display ${t.textCol} text-sm shrink-0`}>
+                  {t.initials}
+                </div>
+                <div>
+                  <p class="text-brand-cream font-bold text-sm">{t.name}</p>
+                  <p class="text-brand-cream/40 text-xs">{t.role}</p>
+                </div>
               </div>
             </div>
-          </div>
-
-          <!-- T2 -->
-          <div class="relative bg-white/5 border border-white/10 rounded-2xl p-6 text-left hover:border-brand-yellow/30 transition-colors duration-300">
-            <div class="text-brand-yellow text-lg mb-3">★★★★★</div>
-            <p class="text-brand-cream/80 text-sm leading-relaxed mb-4 italic">
-              "My vet actually asked what I'd changed. Coat is glossier, energy levels through the roof. Debbie's is it."
-            </p>
-            <div class="flex items-center gap-3">
-              <div class="w-9 h-9 rounded-full bg-gradient-to-br from-brand-yellow to-brand-orange flex items-center justify-center font-display text-brand-darkbrown text-sm">J</div>
-              <div>
-                <p class="text-brand-cream font-bold text-sm">James T.</p>
-                <p class="text-brand-cream/40 text-xs">Beagle Dad 🐶</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- T3 -->
-          <div class="relative bg-white/5 border border-white/10 rounded-2xl p-6 text-left hover:border-brand-yellow/30 transition-colors duration-300">
-            <div class="text-brand-yellow text-lg mb-3">★★★★★</div>
-            <p class="text-brand-cream/80 text-sm leading-relaxed mb-4 italic">
-              "Three dogs. Three different breeds. All three obsessed. I've never seen anything like it. Launch already!"
-            </p>
-            <div class="flex items-center gap-3">
-              <div class="w-9 h-9 rounded-full bg-gradient-to-br from-brand-red to-brand-orange flex items-center justify-center font-display text-white text-sm">P</div>
-              <div>
-                <p class="text-brand-cream font-bold text-sm">Priya K.</p>
-                <p class="text-brand-cream/40 text-xs">Multi-dog household 🐾🐾🐾</p>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
 
 
-    <!-- ═══════════════════════════════════════════
-         SECOND CTA BANNER
-    ════════════════════════════════════════════ -->
-    <section class="relative bg-gradient-to-r from-brand-orange via-brand-red to-brand-orange py-16 px-4 overflow-hidden">
-      <div class="pointer-events-none absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2260%22%20height%3D%2260%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%222%22%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.07%22/%3E%3C/svg%3E')]"></div>
+    <!-- ╔══════════════════════════════════════════════╗
+         ║  SECOND CTA BANNER                          ║
+         ╚══════════════════════════════════════════════╝ -->
+    <section class="relative bg-gradient-to-r from-brand-orange via-brand-red to-brand-orange py-20 px-4 overflow-hidden">
+      <!-- Dot overlay -->
+      <div class="pointer-events-none absolute inset-0"
+           style="background-image:radial-gradient(circle, rgba(255,255,255,0.07) 1px, transparent 1px); background-size:50px 50px;"></div>
+      <!-- Glowing blobs -->
+      <div class="pointer-events-none absolute -top-16 -left-16 w-64 h-64 rounded-full bg-brand-yellow/20 blur-3xl"></div>
+      <div class="pointer-events-none absolute -bottom-16 -right-16 w-64 h-64 rounded-full bg-brand-darkbrown/30 blur-3xl"></div>
+
       <div class="relative max-w-3xl mx-auto text-center">
         <p class="font-display text-white/80 text-lg sm:text-xl mb-2 tracking-wide">
           Don't let your pup miss out 🐾
         </p>
-        <h2 class="font-display text-4xl sm:text-5xl text-white drop-shadow-lg mb-6">
+        <h2 class="font-display text-4xl sm:text-5xl text-white drop-shadow-lg mb-5">
           Join the Waitlist Today
         </h2>
-        <p class="text-white/80 text-base sm:text-lg mb-8 max-w-lg mx-auto">
-          Early subscribers get <strong class="text-brand-yellow">30% off their first order</strong> and a free bag of our signature training treats.
+        <p class="text-white/80 text-base sm:text-lg mb-9 max-w-lg mx-auto leading-relaxed">
+          Early subscribers get <strong class="text-brand-yellow">30% off their first order</strong> plus
+          a free bag of our signature training treats.
         </p>
         <a
           href="#signup"
-          class="inline-block rounded-2xl bg-brand-darkbrown text-brand-yellow font-display text-xl px-10 py-4 shadow-xl hover:bg-brand-brown hover:scale-105 active:scale-95 transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-brand-yellow/50"
+          class="inline-block rounded-2xl bg-brand-darkbrown text-brand-yellow font-display text-xl px-12 py-4 shadow-2xl hover:bg-brand-brown hover:scale-105 active:scale-95 transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-brand-yellow/50"
         >
           Sign Me Up! 🐶
         </a>
@@ -343,37 +374,37 @@ import '../styles/global.css';
     </section>
 
 
-    <!-- ═══════════════════════════════════════════
-         FOOTER
-    ════════════════════════════════════════════ -->
-    <footer class="bg-brand-darkbrown border-t border-white/5 py-10 px-4 text-center">
+    <!-- ╔══════════════════════════════════════════════╗
+         ║  FOOTER                                     ║
+         ╚══════════════════════════════════════════════╝ -->
+    <footer class="bg-brand-darkbrown border-t border-white/5 py-12 px-4 text-center">
       <div class="flex items-center justify-center gap-2 mb-3">
-        <span class="text-2xl">🐾</span>
-        <span class="font-display text-brand-orange text-xl">Debbie's Dog Food</span>
-        <span class="text-2xl">🐾</span>
+        <span class="text-2xl select-none">🐾</span>
+        <span class="font-display text-brand-orange text-2xl">Debbie's Dog Food</span>
+        <span class="text-2xl select-none">🐾</span>
       </div>
       <p class="text-brand-cream/40 text-sm mb-1">
-        Premium nutrition. Tail-wagging flavours. Launching soon.
+        Premium nutrition. Tail-wagging flavours. Launching very soon.
       </p>
       <p class="text-brand-cream/25 text-xs">
-        © {new Date().getFullYear()} Debbie's Dog Food. All rights reserved. Made with ❤️ for dogs everywhere.
+        © {year} Debbie's Dog Food. All rights reserved. Made with ❤️ for dogs everywhere.
       </p>
     </footer>
 
 
-    <!-- ═══════════════════════════════════════════
-         FORM VALIDATION SCRIPT
-    ════════════════════════════════════════════ -->
+    <!-- ╔══════════════════════════════════════════════╗
+         ║  FORM VALIDATION SCRIPT                     ║
+         ╚══════════════════════════════════════════════╝ -->
     <script>
-      const form = document.getElementById('signup-form') as HTMLFormElement | null;
-      const successMsg = document.getElementById('success-msg');
-      const firstNameInput = document.getElementById('firstName') as HTMLInputElement | null;
-      const emailInput = document.getElementById('email') as HTMLInputElement | null;
+      const form          = document.getElementById('signup-form')   as HTMLFormElement  | null;
+      const successMsg    = document.getElementById('success-msg');
+      const firstNameInput = document.getElementById('firstName')    as HTMLInputElement | null;
+      const emailInput    = document.getElementById('email')         as HTMLInputElement | null;
       const firstNameError = document.getElementById('firstName-error');
-      const emailError = document.getElementById('email-error');
+      const emailError    = document.getElementById('email-error');
 
-      function isValidEmail(val: string): boolean {
-        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val.trim());
+      function isValidEmail(v: string): boolean {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());
       }
 
       function setError(input: HTMLInputElement, errorEl: HTMLElement | null, show: boolean) {
@@ -383,15 +414,15 @@ import '../styles/global.css';
           errorEl?.classList.remove('hidden');
         } else {
           input.classList.remove('border-brand-red', 'ring-2', 'ring-brand-red/40');
+          input.classList.add('border-white/15');
           errorEl?.classList.add('hidden');
         }
       }
 
       form?.addEventListener('submit', (e) => {
         e.preventDefault();
-
         const nameVal  = firstNameInput?.value ?? '';
-        const emailVal = emailInput?.value ?? '';
+        const emailVal = emailInput?.value    ?? '';
         let valid = true;
 
         if (nameVal.trim() === '') {
@@ -408,23 +439,18 @@ import '../styles/global.css';
           setError(emailInput!, emailError, false);
         }
 
-        if (valid) {
+        if (valid && form && successMsg) {
           form.classList.add('hidden');
-          successMsg?.classList.remove('hidden');
-          successMsg?.classList.add('flex');
+          successMsg.classList.remove('hidden');
+          successMsg.classList.add('flex');
         }
       });
 
-      // Clear errors on input
       firstNameInput?.addEventListener('input', () => {
-        if ((firstNameInput?.value ?? '').trim() !== '') {
-          setError(firstNameInput!, firstNameError, false);
-        }
+        if ((firstNameInput.value ?? '').trim() !== '') setError(firstNameInput, firstNameError, false);
       });
       emailInput?.addEventListener('input', () => {
-        if (isValidEmail(emailInput?.value ?? '')) {
-          setError(emailInput!, emailError, false);
-        }
+        if (isValidEmail(emailInput.value ?? '')) setError(emailInput, emailError, false);
       });
     </script>
 
